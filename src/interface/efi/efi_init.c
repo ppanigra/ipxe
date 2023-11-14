@@ -283,9 +283,8 @@ EFI_STATUS efi_init ( EFI_HANDLE image_handle,
 	}
 	memcpy ( device_path_copy, device_path, device_path_len );
 	efi_loaded_image_path = device_path_copy;
-	DBGC ( systab, "EFI image device path %s\n",
+	DBGC ( systab, "EFI image device path PPANIGRA %s\n",
 	       efi_devpath_text ( efi_loaded_image_path ) );
-
 	/* EFI is perfectly capable of gracefully shutting down any
 	 * loaded devices if it decides to fall back to a legacy boot.
 	 * For no particularly comprehensible reason, it doesn't
