@@ -463,7 +463,7 @@ efi_devpath_text ( EFI_DEVICE_PATH_PROTOCOL *path ) {
 	static char text[512];
 	size_t len;
 	CHAR16 *wtext;
-
+	DBG ( "PPANIGRA" );
 	/* Sanity checks */
 	if ( ! path ) {
 		DBG ( "[NULL DevicePath]" );
@@ -482,7 +482,7 @@ efi_devpath_text ( EFI_DEVICE_PATH_PROTOCOL *path ) {
 	wtext = efidpt->ConvertDevicePathToText ( path, TRUE, FALSE );
 	if ( ! wtext )
 		return NULL;
-
+	DBGC ( wtext, "TEXTPATH" "%s");
 	/* Store path in buffer */
 	snprintf ( text, sizeof ( text ), "%ls", wtext );
 
