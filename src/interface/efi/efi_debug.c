@@ -482,7 +482,7 @@ efi_devpath_text ( EFI_DEVICE_PATH_PROTOCOL *path ) {
 	wtext = efidpt->ConvertDevicePathToText ( path, TRUE, FALSE );
 	if ( ! wtext )
 		return NULL;
-	DBGC ( wtext, "TEXTPATH" "%s");
+	DBGC ( wtext, "TEXTPATH\n");
 	/* Store path in buffer */
 	snprintf ( text, sizeof ( text ), "%ls", wtext );
 
